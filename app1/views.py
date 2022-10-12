@@ -22,4 +22,4 @@ class ReviewCsvForm(FormView):
         res = AsyncResult(result_id).state
         t=Task(file_name=name,count=count,task_id=result,task_status=res)
         t.save()
-        return HttpResponse(AsyncResult(result_id))
+        return HttpResponse(result_id)
